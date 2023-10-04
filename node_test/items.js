@@ -1,4 +1,4 @@
-export.items = [
+exports.items = [
     'Apple',
     'Orange',
     'Peach',
