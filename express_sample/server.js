@@ -23,7 +23,21 @@ app.get('/', (req, res) => {
 })
 
 app.get('/profile', (req, res) => {
-    res.send('Profile Page')
+    res.send('Profile')
+})
+
+// POSTリクエスト
+app.post('/auth', (req, res) => {
+    var loginName = req.body.login_name
+    var password = req.body.password
+    console.log(loginName, password)
+
+    var message = "ログイン失敗"
+    if (loginName == process.env.LOGIN_NAME
+        && password == process.env.PASSWORD) {
+            message = "ログイン成功"
+    }
+    res.send(message)
 })
 
 //　サーバ停止: 起動中のターミナルで Ctrl + C
